@@ -1,0 +1,76 @@
+import { useState } from "react";
+        <div className="space-x-3">
+          <Button variant="outline">Trang chủ</Button>
+          <Button variant="outline">Tour</Button>
+          <Button variant="outline">Dịch vụ</Button>
+          <Button variant="outline">Liên hệ</Button>
+        </div>
+      </div>
+
+      {/* BANNER */}
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-12 rounded-2xl text-center">
+        <h2 className="text-4xl font-bold mb-2">Khám phá thế giới cùng NextTrip 🌍</h2>
+        <p className="text-lg">Tour quốc tế - Thiết kế riêng - Giá tốt nhất</p>
+      </div>
+
+      {/* SEARCH */}
+      <div>
+        <Input
+          placeholder="Tìm tour (Hàn, Thái, concert...)"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
+      {/* SERVICES */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Dịch vụ của chúng tôi</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card><CardContent className="p-4">🌏 Tour trọn gói Singapore, Hàn, Thái</CardContent></Card>
+          <Card><CardContent className="p-4">🧳 Tour thiết kế riêng theo nhu cầu</CardContent></Card>
+          <Card><CardContent className="p-4">🛂 Visa & vé máy bay</CardContent></Card>
+          <Card><CardContent className="p-4">🏢 MICE outbound doanh nghiệp</CardContent></Card>
+          <Card><CardContent className="p-4">🎤 Tour concert quốc tế</CardContent></Card>
+          <Card><CardContent className="p-4">🕌 Tour hành hương Ấn - Thái - Myanmar</CardContent></Card>
+        </div>
+      </div>
+
+      {/* TOURS */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Tour nổi bật</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {filteredTours.map((tour) => (
+            <Card key={tour.id} className="rounded-2xl shadow-lg">
+              <CardContent className="p-4">
+                <h3 className="text-xl font-semibold">{tour.name}</h3>
+                <p className="text-gray-500">Loại: {tour.type}</p>
+                <p className="my-2 font-bold">{tour.price}</p>
+                <Button className="w-full">Đặt tour</Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* ABOUT */}
+      <div className="bg-gray-100 p-6 rounded-2xl">
+        <h2 className="text-2xl font-bold mb-2">Về NextTrip Travel</h2>
+        <p>
+          NextTrip Travel là công ty lữ hành chuyên cung cấp các tour quốc tế chất lượng cao,
+          tour thiết kế riêng và các sản phẩm du lịch ngách như MICE, concert quốc tế và hành hương.
+        </p>
+      </div>
+
+      {/* CONTACT */}
+      <div className="text-center">
+        <h2 className="text-2xl font-bold">Liên hệ</h2>
+        <p>Hotline: 0909 123 456</p>
+        <p>Email: nexttriptravel@gmail.com</p>
+      </div>
+
+      {/* FOOTER */}
+      <div className="text-center text-gray-500">
+        © 2026 NextTrip Travel
+      </div>
+    </div>
+  );
+}
